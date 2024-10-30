@@ -1,9 +1,9 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 DEBUG = -g -fsanitize=address
-SRCS = megaphone.cpp
+SRCS = contact.cpp main.cpp phonebook.cpp
 OBJS = $(SRCS:.cpp=.o)
-TARGET = megaphone
+TARGET = phonebook
 TARGET1 = debug
 
 all: $(TARGET)
@@ -14,7 +14,6 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o  $@ $^
 
 $(TARGET1): $(OBJS)
-	@echo $(BRIGHT_YELLOW)
 	$(CXX) $(CXXFLAGS) $(DEBUG) -o  $@ $^
 
 %.o: %.cpp
