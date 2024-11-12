@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 04:32:11 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/10/30 09:57:46 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/12 20:57:56 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,19 @@ void PhoneBook::add() {
 	i++;
 }
 
+void printExampleOverView() {
+	std::cout << "---------------------------------------------------" << std::endl;
+	std::cout << "      index |  last name | first name |   nickname " << std::endl;
+	std::cout << "---------------------------------------------------" << std::endl;
+}
+
 void PhoneBook::search() {
 	bool flg = false;
 	std::string i = "";
 	int	num = -1;
 
 	std::cout << std::endl;
+	printExampleOverView();
 	int index = 0;
 	while (index < 8)
 	{

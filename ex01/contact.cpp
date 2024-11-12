@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 04:32:16 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/10/30 10:20:11 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/13 08:08:15 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,30 @@ void Contact::init(int i) {
 	std::cout << std::endl;
 }
 
-void Contact::printOverView(int i) const {
-	if (i == 0)
-		std::cout << "*--------------------------*" << std::endl;
-	std::cout << " index      : " << i << std::endl;
-	std::cout << " last name  : " << this->_lastName << std::endl;
-	std::cout << " first name : " << this->_firstName << std::endl;
-	std::cout << " nickname   : " << this->_nickName << std::endl;
-	std::cout << "*--------------------------*" << std::endl;
+void printOverViewPart(std::string str) {
+	int len = str.size();
+	if (len <= 10) {
+		for (int i = 0; i < (11 - len); i++) {
+			std::cout << " ";
+		}
+		std::cout << str << " ";
+	}
+	else {
+		std::cout << " ";
+		std::cout << str.substr(0, 9);
+		std::cout << ". ";
+	}
+}
 
+void Contact::printOverView(int i) const {
+	std::cout << "          " << i << " |";
+	printOverViewPart(this->_lastName);
+	std::cout << "|";
+	printOverViewPart(this->_firstName);
+	std::cout << "|";
+	printOverViewPart(this->_nickName);
+	std::cout << std::endl;
+	std::cout << "---------------------------------------------------" << std::endl;
 }
 
 void Contact::printDetails(int num) const {
